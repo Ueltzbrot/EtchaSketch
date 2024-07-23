@@ -22,7 +22,7 @@ function calculate(x){
     console.log(x)
 if (x === undefined) { for (i=1; i<257; i++){
         const grid = document.createElement("div")
-        grid.style.border = "solid 0.2px white"
+        grid.style.border = "solid 0.2px pink"
         container.appendChild(grid);
         const width = container.getBoundingClientRect().width;
         const height = container.getBoundingClientRect().height;
@@ -31,6 +31,7 @@ if (x === undefined) { for (i=1; i<257; i++){
         grid.style.width = widthDiv;
         grid.style.height = heightDiv;
         grid.style.boxSizing = "border-box";
+        grid.style.flexGrow = 1;
         container.appendChild(grid);
     
     }} 
@@ -39,7 +40,7 @@ if (x === undefined) { for (i=1; i<257; i++){
         const height1 = Size1(x)
     for (i=1; i<x*x+1; i++){
         const grid = document.createElement("div")
-        grid.style.border = "solid 0.2px white"
+        grid.style.border = "solid 0.2px pink"
         grid.style.width = width1;
         grid.style.height = height1;
         grid.style.boxSizing = "border-box";
@@ -48,25 +49,25 @@ if (x === undefined) { for (i=1; i<257; i++){
     }}
 } 
 
-const hover = document.querySelectorAll(".Demo > div")
 const clear = document.querySelectorAll(".Delete")
-
 clear.forEach((button) => {
+    const hover = document.query
     button.addEventListener("click", (e) =>{
     const target = e.target;
         console.log(target.id)
-
-    switch(target.id){
+        const hover = document.querySelectorAll(".Demo > div")
+    
+        switch(target.id){
         case 'Clear' :
             hover.forEach((div) => {
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = "white";
             })
             break;
 
         case 'Eraser':
             hover.forEach((div) => {
                 div.addEventListener("mouseover", (e) => {
-                    div.style.backgroundColor = "black";
+                    div.style.backgroundColor = "white";
 
 
                 })
@@ -76,7 +77,7 @@ clear.forEach((button) => {
         case 'Black':
             hover.forEach((div) => {
                 div.addEventListener("mouseover", () => {
-                    div.style.backgroundColor = "blue"
+                    div.style.backgroundColor = "pink"
                 })
             })
             break;
@@ -87,11 +88,9 @@ clear.forEach((button) => {
             }while(isNaN(selection) || selection > 100 || selection < 1);
             
             container.textContent = ""
-            calculate(selection);     
+            calculate(selection);    
+             
             break;
-
-
-
         case 'Rainbow':
             hover.forEach((div) => {
                 div.addEventListener("mouseover", () => {
@@ -101,8 +100,6 @@ clear.forEach((button) => {
         break;
     }
 })
-
-
 })
 
 function color(){
@@ -115,3 +112,4 @@ g = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 return `rgb(${r}, ${g}, ${b})`
 
 }
+
