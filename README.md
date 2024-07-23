@@ -5,3 +5,4 @@ Die größten Probleme hatte ich nach längerer Zeit mit CSS. Insbesondere die A
 Aber sollte halbwegs geklappt haben. Ich hätte gerne die Größe des Grids dynamischer gestaltet. Am Ende hab ichs geändert, daher ist der JS Code wohl 
 komplizierter als er sein müsste.
 Aber ich denke man kann damit zufrieden sein.
+ueltzbrot.github.io
